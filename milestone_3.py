@@ -3,6 +3,7 @@ def check_guess(guess,word):
     guess = guess.lower()
     if guess in word:
         print(f"Good guess! {guess}")
+        break
     else:
         print(f"Sorry, {guess} is not in the word. Try again.")
 def ask_for_input(word):
