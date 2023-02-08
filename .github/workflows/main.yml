@@ -1,0 +1,117 @@
+name: Correcting Hangman
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  milestones:
+    runs-on: ubuntu-latest
+    env:
+      USER_ID: ${{ secrets.USER_ID }}
+      API_TOKEN: ${{ secrets.API_TOKEN }}
+      API_ROOT: ${{ secrets.API_ROOT }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2.3.1
+      
+      - name: Download the marking package
+        run: |
+          python -m pip install --upgrade pip
+          pip install hangman-marking-aicore
+# python -m spacy download en_core_web_md
+
+
+      - name: Tick off boxes in milestone 1
+        id: tick-off-milestone-1
+        run: |
+          python -m hangman_test.verify_milestone1
+        if: always()
+
+      
+      - name: Verify milestone 2 tasks - Part 1
+        id: verify-milestone-2-tasks-p1
+        run: |
+          python -m unittest -v hangman_test.test_milestone2_p1 2> milestone_2_p1.txt
+      
+      - name: Tick off boxes in milestone 2 - Part 1
+        run: |
+          python -m hangman_test.verify_milestone2_p1
+        if: always() # If milestone 2 didn't run, it will untick all tasks from that milestone
+      
+      - name: Verify milestone 2 tasks - Part 2
+        id: verify-milestone-2-tasks-p2
+        run: |
+          python -m unittest -v hangman_test.test_milestone2_p2 2> milestone_2_p2.txt
+
+      - name: Tick off boxes in milestone 2 - Part 2
+        run: |
+          python -m hangman_test.verify_milestone2_p2
+        if: always() 
+
+      - name: Verify milestone 3 tasks - Part 1
+        id: verify-milestone-3-tasks-p1
+        run: |
+          python -m unittest -v hangman_test.test_milestone3_p1 2> milestone_3_p1.txt
+      
+      - name: Tick off boxes in milestone 3 - Part 1
+        run: |
+          python -m hangman_test.verify_milestone3_p1
+        if: always() # If milestone 3 didn't run, it will untick all tasks from that milestone
+
+      - name: Verify milestone 3 tasks - Part 2
+        id: verify-milestone-3-tasks-p2
+        run: |
+          python -m unittest -v hangman_test.test_milestone3_p2 2> milestone_3_p2.txt
+
+      - name: Tick off boxes in milestone 3 - Part 2
+        run: |
+          python -m hangman_test.verify_milestone3_p2
+        if: always() # If milestone 3 didn't run, it will untick all tasks from that milestone
+
+      - name: Verify milestone 4 tasks - Part 1
+        id: verify-milestone-4-tasks-p1
+        run: |
+          python -m unittest -v hangman_test.test_milestone4_p1 2> milestone_4_p1.txt
+
+      - name: Tick off boxes in milestone 4 - Part 1
+        run: |
+          python -m hangman_test.verify_milestone4_p1
+        if: always() # If milestone 4 didn't run, it will untick all tasks from that milestone
+
+      - name: Verify milestone 4 tasks - Part 2
+        id: verify-milestone-4-tasks-p2
+        run: |
+          python -m unittest -v hangman_test.test_milestone4_p2 2> milestone_4_p2.txt
+
+      - name: Tick off boxes in milestone 4 - Part 2
+        run: |
+          python -m hangman_test.verify_milestone4_p2
+        if: always() # If milestone 4 didn't run, it will untick all tasks from that milestone
+
+      - name: Verify milestone 5 tasks - Part 1
+        id: verify-milestone-5-tasks-p1
+        run: |
+          python -m unittest -v hangman_test.test_milestone5_p1 2> milestone_5_p1.txt
+
+      - name: Tick off boxes in milestone 5 - Part 1
+        run: |
+          python -m hangman_test.verify_milestone5_p1
+        if: always() # If milestone 5 didn't run, it will untick all tasks from that milestone
+
+      - name: Verify milestone 5 tasks - Part 2
+        id: verify-milestone-5-tasks-p2
+        run: |
+          python -m unittest -v hangman_test.test_milestone5_p2 2> milestone_5_p2.txt
+
+      - name: Tick off boxes in milestone 5 - Part 2
+        run: |
+          python -m hangman_test.verify_milestone5_p2
+        if: always() # If milestone 5 didn't run, it will untick all tasks from that milestone
+
