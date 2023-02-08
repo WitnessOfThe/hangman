@@ -1,5 +1,4 @@
 import random
-import string
 
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
@@ -7,8 +6,7 @@ if __name__ == '__main__':
     print(word)
     while True:
         guess = input("Gimmi a letter: ")
-        if len(guess) == 1: 
-            if guess in string.ascii_letters:
+        if len(guess) == 1 and guess.isalpha() == 1: 
                 print( "Good guess!")
                 break
         else:
