@@ -10,6 +10,7 @@ def ask_for_input(word):
         guess = input("Gimmi a letter: ")
         if len(guess) == 1 and guess.isalpha() == 1: 
             check_guess(guess,word)
+            break
         else:
             print("Invalid letter. Please, enter a single alphabetical character.")
 if __name__ == '__main__':
