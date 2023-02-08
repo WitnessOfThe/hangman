@@ -9,10 +9,11 @@ def ask_for_input(word):
     while True:
         guess = input("Gimmi a letter: ")
         if len(guess) == 1 and guess.isalpha() == 1: 
-            check_guess(guess)
+            break
         else:
             print("Invalid letter. Please, enter a single alphabetical character.")
-            break
+        check_guess(guess)
+        
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
     word      = random.choice(word_list)
