@@ -1,4 +1,5 @@
 import random
+
 class Hangman:
     def __init__(self, word_list,num_lives=5):
         
@@ -17,7 +18,7 @@ class Hangman:
 
             print(f"Good guess! {guess} is in the word.")
             self.list_of_guesses.append(guess)
-            
+
     def ask_for_input(self):
 
         while True:
@@ -33,6 +34,7 @@ class Hangman:
 
                 print("You already tried that letter!")
                 break
+            elif: len(set(self.list_of_guesses)) == self.num_letters
 
             else:
 
