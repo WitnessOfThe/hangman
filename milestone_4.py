@@ -15,15 +15,18 @@ class Hangman:
 #        else:
  #           print(f"Sorry, {guess} is not in the word. Try again.")
     def ask_for_input(self):
+        i = 0
         while True:
             guess = input("Gimmi a letter: ")
             if not(len(guess) == 1 and guess.isalpha() == 1): 
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
+            elif i == 5:
+                break
             else:
                 self.check_guess(guess)
-                break                
+                i += 1
                 
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
