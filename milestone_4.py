@@ -22,7 +22,7 @@ class Hangman:
                 print("You already tried that letter!")
             else:
                 self.check_guess(guess)
-                
+                break
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
     Hangman(word_list).ask_for_input()
