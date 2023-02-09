@@ -22,8 +22,10 @@ class Hangman:
                 break
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
+                break
             else:
-                self.check_guess(guess)                
+                self.check_guess(guess)               
+                break 
                 
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
