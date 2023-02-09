@@ -11,7 +11,7 @@ class Hangman:
         guess = guess.lower()
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
-#            self.list_of_guesses.append(guess)
+            self.list_of_guesses.append(guess)
 #        else:
  #           print(f"Sorry, {guess} is not in the word. Try again.")
     def ask_for_input(self):
@@ -23,7 +23,6 @@ class Hangman:
                 print("You already tried that letter!")
             else:
                 self.check_guess(guess)                
-                break
                 
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
