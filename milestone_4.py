@@ -28,8 +28,9 @@ class Hangman:
 
         else:
 
-            print( "Sorry, {guess} is not in the word.")
             self.num_lives -= 1
+            print(f"Sorry, {guess} is not in the word.")
+            print(f"You have {self.num_lives} lives left.")            
 
         self.list_of_guesses.append(guess)
 
