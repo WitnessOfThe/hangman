@@ -1,10 +1,12 @@
 import random
+
 def check_guess(guess):
     guess = guess.lower()
     if guess in word:
         print(f"Good guess! {guess}")
     else:
         print(f"Sorry, {guess} is not in the word. Try again.")
+
 def ask_for_input(word):
     while True:
         guess = input("Gimmi a letter: ")
