@@ -74,28 +74,28 @@ class Hangman:
   #          else:
    #             break          
     '''                
-    def play_game(self,word_list):
+def play_game(self,word_list):
 
-        num_lives = 5
-        game = Hangman
-        game = game(word_list,num_lives)
+    num_lives = 5
+    game = Hangman
+    game = game(word_list,num_lives)
 
-        while True:
+    while True:
 
-            if game.num_lives == 0:
+        if game.num_lives == 0:
 
-                print('You lost!')
-                break
-            if game.num_lives > 0 and game.num_letters > 0 :
+            print('You lost!')
+            break
+        if game.num_lives > 0 and game.num_letters > 0 :
 
-                game.ask_for_input()
+            game.ask_for_input()
 
-            if game.num_lives > 0 and game.num_letters == 0 :
+        if game.num_lives > 0 and game.num_letters == 0 :
 
-                print('Congratulations. You won the game!')
-                break
+            print('Congratulations. You won the game!')
+            break
 
 if __name__ == '__main__':
 
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
-    Hangman(word_list).play_game(word_list)
+    play_game(word_list)
