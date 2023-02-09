@@ -17,26 +17,29 @@ class Hangman:
         if guess in self.word:
 
             print(f"Good guess! {guess} is in the word.")
+            # next line is added to fix the "You already tried that letter!" absence error
             self.list_of_guesses.append(guess)
 
     def ask_for_input(self):
 
         while True:
-            if not(len(set(self.list_of_guesses)) == self.num_letters):
-                guess = input("Gimmi a letter: ")
-                if not(len(guess) == 1 and guess.isalpha() == 1): 
+#            if not(len(set(self.list_of_guesses)) == self.num_letters):
 
-                    print("Invalid letter. Please, enter a single alphabetical character.")
+            # without breaks this create infinite loop. Breaks are not specified in the task workflow
+            guess = input("Gimmi a letter: ")
+            if not(len(guess) == 1 and guess.isalpha() == 1): 
 
-                elif guess in self.list_of_guesses:
+                print("Invalid letter. Please, enter a single alphabetical character.")
 
-                    print("You already tried that letter!")
-                else:
+            elif guess in self.list_of_guesses:
 
-                    self.check_guess(guess)
-                print(f'{self.list_of_guesses}')
+                print("You already tried that letter!")
             else:
-                break          
+
+                self.check_guess(guess)
+#               print(f'{self.list_of_guesses}')
+  #          else:
+   #             break          
                 
 if __name__ == '__main__':
 
