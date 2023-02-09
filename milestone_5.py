@@ -74,7 +74,7 @@ class Hangman:
   #          else:
    #             break          
     '''                
-def play_game(self,word_list):
+def play_game(word_list):
 
     num_lives = 5
     game = Hangman
