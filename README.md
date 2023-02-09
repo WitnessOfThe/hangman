@@ -12,6 +12,11 @@ Milestone one is about connection of VsCode to the gitHub
 Code in milestone_2.py creates a list of 5 character vectors. In the first part of the program, we randomly select the list element and show it in the command prompt. The random selection is performed by using the random package. 
 
 The second part of the code demonstrates a method of interaction with the user by using the "while true" statement. It allows the rejection of incorrect inputs and asks a user to try again. Here, we check the user's input to be a single character. 
+
 # Milestone 3
 
 The code in milestone_3.py separate functions of asking and checking the user input on one side and checking if the letter that the user guessed belongs to the randomly selected word from the list.
+
+# Milestone 4
+
+The code in milestone_4.py collect different functional created in Milestone 3 into the single class object. Here we store all game parameters in _init_ def and created two different methods for the game. First method gets the users input and check it for correctness, while second method is responsible for the game functional i.e. checing if the user guess is the correct one and counts the number of lifes that user got.
