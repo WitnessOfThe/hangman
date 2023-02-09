@@ -22,23 +22,21 @@ class Hangman:
     def ask_for_input(self):
 
         while True:
+            if not(len(set(self.list_of_guesses)) == self.num_letters):
+                guess = input("Gimmi a letter: ")
+                print(f'{self.list_of_guesses}')
+                if not(len(guess) == 1 and guess.isalpha() == 1): 
 
-            guess = input("Gimmi a letter: ")
+                    print("Invalid letter. Please, enter a single alphabetical character.")
 
-            if not(len(guess) == 1 and guess.isalpha() == 1): 
+                elif guess in self.list_of_guesses:
 
-                print("Invalid letter. Please, enter a single alphabetical character.")
-                break
+                    print("You already tried that letter!")
+                else:
 
-            elif guess in self.list_of_guesses:
-
-                print("You already tried that letter!")
-                break
-            elif len(set(self.list_of_guesses)) == self.num_letters:
-                break
+                    self.check_guess(guess)
             else:
-
-                self.check_guess(guess)               
+                break          
                 
 if __name__ == '__main__':
 
