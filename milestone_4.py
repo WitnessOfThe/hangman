@@ -35,7 +35,7 @@ class Hangman:
                 print("You already tried that letter!")
                 break
             elif len(set(self.list_of_guesses)) == self.num_letters:
-
+                break
             else:
 
                 self.check_guess(guess)               
