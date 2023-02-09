@@ -24,7 +24,6 @@ class Hangman:
         while True:
             if not(len(set(self.list_of_guesses)) == self.num_letters):
                 guess = input("Gimmi a letter: ")
-                print(f'{self.list_of_guesses}')
                 if not(len(guess) == 1 and guess.isalpha() == 1): 
 
                     print("Invalid letter. Please, enter a single alphabetical character.")
@@ -35,6 +34,7 @@ class Hangman:
                 else:
 
                     self.check_guess(guess)
+                print(f'{self.list_of_guesses}')
             else:
                 break          
                 
