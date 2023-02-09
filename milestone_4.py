@@ -19,7 +19,18 @@ class Hangman:
             print(f"Good guess! {guess} is in the word.")
             # next line is added to fix the "You already tried that letter!" absence error
             self.list_of_guesses.append(guess)
-
+    def ask_for_input(self):
+        while True:
+            guess = input("Enter a letter: ")
+            if len(guess) != 1 or not guess.isalpha():
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guess in self.list_of_guesses:
+                print("You already tried that letter!")
+            else:
+                self.check_guess(guess)
+                self.list_of_guesses.append(guess)
+                break
+    '''
     def ask_for_input(self):
 
         while True:
@@ -39,7 +50,7 @@ class Hangman:
 #               print(f'{self.list_of_guesses}')
   #          else:
    #             break          
-                
+    '''                
 if __name__ == '__main__':
 
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
