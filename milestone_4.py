@@ -8,6 +8,7 @@ class Hangman:
         self.num_lives       = num_lives
         self.num_letters     = len(set(self.word))
         self.list_of_guesses = []
+
     def check_guess(self,guess):
         guess = guess.lower()
         if guess in self.word:
@@ -26,7 +27,6 @@ class Hangman:
                 break
             else:
                 self.check_guess(guess)               
-                break 
                 
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon']
