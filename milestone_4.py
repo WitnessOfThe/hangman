@@ -21,8 +21,6 @@ class Hangman:
                 if self.word[_] == guess:
                     self.word_guessed[_] = guess
             self.num_letters -= 1
-            # next line is added to fix the "You already tried that letter!" absence error
-            self.list_of_guesses.append(guess)
 
     def ask_for_input(self):
         while True:
